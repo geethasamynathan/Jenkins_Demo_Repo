@@ -20,7 +20,7 @@ pipeline {
     stage('Run') {
       steps {
         bat '''
-          java -cp out MAIN_CLASS
+          java -cp out HelloJenkins
         '''
       }
     }
