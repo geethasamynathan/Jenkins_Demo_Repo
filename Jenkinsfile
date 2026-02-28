@@ -20,9 +20,15 @@ pipeline {
     stage('Run') {
       steps {
         bat '''
-          java -cp out HelloJenkins
+          java -cp out demo1.HelloJenkins
         '''
       }
+    }
+  }
+
+  post {
+    always {
+      archiveArtifacts artifacts: 'out/**', fingerprint: true
     }
   }
 }
